@@ -26,7 +26,7 @@ const TaskForm = () => {
     if (id) {
       await axios.put(`${apiUrl}/tasks/${id}`, task);
     } else {
-      await axios.post('${apiUrl}/api/tasks', task);
+      await axios.post(`${apiUrl}/api/tasks`, task);
     }
     navigate('/');
   };
