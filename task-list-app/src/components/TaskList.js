@@ -4,7 +4,7 @@ import TaskItem from './TaskItem';
 import './TaskList.css';
 import { Link } from 'react-router-dom';
 
-const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
