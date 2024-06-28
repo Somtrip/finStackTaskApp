@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useHistory, useParams } from 'react-router-dom';
+import { useNavigate , useParams } from 'react-router-dom';
 import './TaskForm.css';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
 const TaskForm = () => {
   const [task, setTask] = useState({ date: '', entityName: '', taskType: '', time: '', contactPerson: '', note: '', status: 'open' });
-  const history = useHistory();
+  const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
@@ -23,17 +23,12 @@ const TaskForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-try {
     if (id) {
       await axios.put(`${apiUrl}/api/tasks/${id}`, task);
     } else {
       await axios.post(`${apiUrl}/api/tasks`, task);
     }
-    
-    history.push('/');
-  } catch (error) {
-    console.error('Error saving task', error);
-  }
+    navigate('/');
   };
 
   return (
