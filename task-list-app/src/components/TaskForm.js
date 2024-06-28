@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import './TaskForm.css';
 
+const apiUrl = process.env.REACT_APP_API_URL 
+
 const TaskForm = () => {
   const [task, setTask] = useState({ date: '', entityName: '', taskType: '', time: '', contactPerson: '', note: '', status: 'open' });
   const navigate = useNavigate();
@@ -10,7 +12,7 @@ const TaskForm = () => {
 
   useEffect(() => {
     const fetchTask = async () => {
-      const response = await axios.get(`http://localhost:5000/api/tasks/${id}`);
+      const response = await axios.get(`${apiUrl}/api/tasks/${id}`);
       setTask(response.data);
     };
 
@@ -22,9 +24,9 @@ const TaskForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (id) {
-      await axios.put(`http://localhost:5000/api/tasks/${id}`, task);
+      await axios.put(`${apiUrl}/tasks/${id}`, task);
     } else {
-      await axios.post('http://localhost:5000/api/tasks', task);
+      await axios.post('${apiUrl}/api/tasks', task);
     }
     navigate('/');
   };
