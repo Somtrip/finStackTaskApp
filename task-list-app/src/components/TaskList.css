@@ -1,0 +1,59 @@
+.task-list {
+    padding: 80px;
+    background-color: rgb(187, 114, 223);
+    
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    
+    
+  }
+  
+  .new-task-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+    
+
+  }
+  
+  .tasks-table th, .tasks-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    
+  }
+  
+  .tasks-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+    
+  }
+
+ 
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.filters select,
+.filters input {
+  padding: 5px;
+  border-radius: 10px;
+}
+
+
+  

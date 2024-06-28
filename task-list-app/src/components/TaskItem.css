@@ -1,0 +1,40 @@
+.task-item {
+    background-color: #fff;
+    transition: background-color 0.3s;
+    
+  }
+  
+  .task-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .edit-button, .delete-button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+  }
+  
+  /* TaskItem.css */
+
+.status-button {
+  background-color: #43d73e;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.status-button:hover {
+  background-color: #b40ed5;
+}
+
+
