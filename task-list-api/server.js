@@ -12,14 +12,11 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 5000;
 const db = process.env.MONGODB_URI;
 
-module.exports = async () => {
+ const connectDB = async () => {
     try {
-        await mongoose.connect(db, {});
-        console.log("CONNECTED TO DATABASE SUCCESSFULLY");
-    } catch (error) {
-        console.error('COULD NOT CONNECT TO DATABASE:', error.message);
+      const conn = await mongoose.connect(process.env.MONGODB_URI);
     }
-};
+  }
 
 const taskSchema = new mongoose.Schema({
   date: String,
