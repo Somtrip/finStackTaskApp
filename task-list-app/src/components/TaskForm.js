@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import './TaskForm.css';
 
-const apiUrl = process.env.REACT_APP_API_URL 
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const TaskForm = () => {
   const [task, setTask] = useState({ date: '', entityName: '', taskType: '', time: '', contactPerson: '', note: '', status: 'open' });
