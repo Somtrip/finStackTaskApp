@@ -12,11 +12,7 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 5000;
 const db = process.env.MONGODB_URI;
 
- const connectDB = async () => {
-    try {
-      const conn = await mongoose.connect(process.env.MONGODB_URI);
-    }
-  }
+mongoose.connect(db, {useUnifiedTopology: true });
 
 const taskSchema = new mongoose.Schema({
   date: String,
