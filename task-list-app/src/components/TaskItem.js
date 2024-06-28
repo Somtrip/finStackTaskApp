@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './TaskItem.css';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const TaskItem = ({ task, fetchTasks }) => {
   const deleteTask = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${task._id}`);
+      await axios.delete(`${apiUrl}/api/tasks/${task._id}`);
       fetchTasks();
     } catch (error) {
       console.error('Error deleting task', error);
@@ -16,7 +18,7 @@ const TaskItem = ({ task, fetchTasks }) => {
   const changeStatus = async () => {
     try {
       const updatedTask = { ...task, status: task.status === 'open' ? 'closed' : 'open' };
-      await axios.put(`http://localhost:5000/api/tasks/${task._id}`, updatedTask);
+      await axios.put(`${apiUrl}/api/tasks/${task._id}`, updatedTask);
       fetchTasks();
     } catch (error) {
       console.error('Error changing task status', error);
