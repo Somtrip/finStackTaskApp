@@ -10,9 +10,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 5000;
-const db = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI;
 
-mongoose.connect(db, { });
+mongoose.connect(MONGODB_URI, { });
 
 const taskSchema = new mongoose.Schema({
   date: String,
